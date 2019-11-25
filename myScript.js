@@ -10,49 +10,51 @@
         }
         
         function jsonFlickrFeed(data) {
-                data.items.forEach(function (element) {
-                const listItem = document.createElement('div');
-                listItem.classList.add("list-group-item");
-                const listItemRow = document.createElement('div');            
-                listItemRow.classList.add("row");
-                const imgDiv = document.createElement('div');
-                imgDiv.classList.add("col-sm-4");
-                imgDiv.id="flickrImg";
-                const img = document.createElement('img');
-                img.id="flickrImg";
-                const descriptionDiv = document.createElement('div');
-                descriptionDiv.classList.add("col-sm-8");
-                const titleRow = document.createElement('div');            
-                titleRow.classList.add("row");
-                const titleDiv = document.createElement('div');
-                titleDiv.classList.add("col-sm-12");
-                const title = document.createElement('h3');
-                
-                const detailsRow = document.createElement('div'); 
+            data.items.forEach(function (element) {
 
-                detailsRow.classList.add("row");
+                const listItem = document.createElement('div');
+                const listItemRow = document.createElement('div');            
+                const imgDiv = document.createElement('div');
+                const img = document.createElement('img');
+                const descriptionDiv = document.createElement('div');
+                const titleRow = document.createElement('div');            
+                const titleDiv = document.createElement('div');
+                const title = document.createElement('h3');
+                const detailsRow = document.createElement('div'); 
                 const publishedDiv = document.createElement('div');
-                publishedDiv.classList.add("col-12","col-md-6","order-md-2");
                 const authorDiv = document.createElement('div');
-                authorDiv.classList.add("col-6","col-md-3","order-md-1");
                 const authorLink = document.createElement('a');
                 const flickrDiv = document.createElement('div');
-                flickrDiv.classList.add("col-6","col-md-3","order-md-3");
                 const flickrLink = document.createElement('a');
+                
+                listItem.classList.add("list-group-item");
+                listItemRow.classList.add("row");
+                imgDiv.classList.add("col-sm-4");
+                img.id="flickrImg";
+                descriptionDiv.classList.add("col-sm-8");
+                titleRow.classList.add("row");
+                titleDiv.classList.add("col-sm-12");
+                detailsRow.classList.add("row");
+                publishedDiv.classList.add("col-12","col-md-6","order-md-2");
+                authorDiv.classList.add("col-6","col-md-3","order-md-1");
+                flickrDiv.classList.add("col-6","col-md-3","order-md-3");
                 
 
                 img.src = element.media.m;
                 title.textContent =element.title;
+
                 var publishedDate = element.published;
                 var publishedDateFormat = dateFormat(publishedDate, "dS mmm yyyy");
                 var publishedTimeFormat = dateFormat(publishedDate, "h:MM");
                 publishedDiv.textContent = "Published: " + publishedDateFormat + " at " + publishedTimeFormat;
-                authorLink.textContent="Post author";
-                flickrLink.textContent="View on Flickr";
+            
                 var jsonAuthor=element.author;
                 var authorSubstr = jsonAuthor.substr(20, jsonAuthor.length);
                 var authorReplace = authorSubstr.replace('")','')
+                authorLink.textContent="Post author"; 
                 authorLink.href="https://www.flickr.com/photos/"+authorReplace;
+
+                flickrLink.textContent="View on Flickr"; 
                 flickrLink.href=element.link;
 
                 imgDiv.appendChild(img);
@@ -69,8 +71,7 @@
                 listItemRow.appendChild(descriptionDiv);
                 listItem.appendChild(listItemRow);
                 document.getElementById("list").appendChild(listItem);
-                
-            });
             
+             });        
         }
 

@@ -10,4 +10,12 @@ img {
     height:150px
 }
 
+$grid-breakpoints: (
+  md: 800px
+);
+
+$container-max-widths: (
+  md: 800px
+);
   
+@import "../node_modules/bootstrap/scss/bootstrap";

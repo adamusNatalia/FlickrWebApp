@@ -1,0 +1,19 @@
+/* Error: $color: theme-color("primary") is not a color.
+ *     ,
+ * 152 | $link-hover-color:          darken($link-color, 15%) !default;
+ *     |                             ^^^^^^^^^^^^^^^^^^^^^^^^
+ *     '
+ *   scss\bootstrap\_variables.scss 152:29  @import
+ *   scss\bootstrap-overrides.scss 1:9      @import
+ *   scss\main.scss 1:9                     root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: $color: theme-color("primary") is not a color.\a     \2577 \a 152 \2502  $link-hover-color:          darken($link-color, 15%) !default;\a     \2502                              ^^^^^^^^^^^^^^^^^^^^^^^^\a     \2575 \a   scss\\bootstrap\\_variables.scss 152:29  @import\a   scss\\bootstrap-overrides.scss 1:9      @import\a   scss\\main.scss 1:9                     root stylesheet';
+}
