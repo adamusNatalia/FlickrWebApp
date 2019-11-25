@@ -1,0 +1,32 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+.row {
+    margin-bottom:15px;
+}  
+
+img {
+    width: auto;
+    height:150px
+  }
+  .form-control { 
+    width:30%;
+    display: inline-block;
+    margin-right:10px;
+  }
+  .name {
+    font-weight: 700;
+  }
+  .expertise-label {
+    display:block;
+    font-weight: 700;
+    margin-top:10px;
+  }
+  .btn-more {
+    margin-top:10px;
+    width: 100%
+  }
+  .label {
+    font-weight: normal;
+  }
+  
